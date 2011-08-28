@@ -291,14 +291,35 @@ class PHP_CodeCoverage_Report_HTML_Renderer_File extends PHP_CodeCoverage_Report
     protected function renderFunctionOrMethodItem(Text_Template $template, array $item, $indent = '')
     {
         $numTestedItems = $item['executedLines'] == $item['executableLines'] ? 1 : 0;
+        $visibility     = '';
+
+        if (isset($item['visibility'])) {
+            switch ($item['visibility']) {
+                case 'public': {
+                    $visibility = '+ ';
+                }
+                break;
+
+                case 'protected': {
+                    $visibility = '# ';
+                }
+                break;
+
+                case 'private': {
+                    $visibility = '- ';
+                }
+                break;
+            }
+        }
 
         return $this->renderItemTemplate(
           $template,
           array(
             'name'                         => sprintf(
-                                                '%s<a href="#%d">%s</a>',
+                                                '%s<a href="#%d">%s%s</a>',
                                                 $indent,
                                                 $item['startLine'],
+                                                $visibility,
                                                 htmlspecialchars($item['signature'])
                                               ),
             'numMethods'                   => 1,

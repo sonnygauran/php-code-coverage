@@ -111,7 +111,8 @@ class PHP_CodeCoverage_Report_FactoryTest extends PHP_CodeCoverage_TestCase
                   'ccn' => 1,
                   'coverage' => 100,
                   'crap' => '1',
-                  'link' => 'BankAccount.php.html#6'
+                  'link' => 'BankAccount.php.html#6',
+                  'visibility' => 'public'
                 ),
                 'setBalance' => array(
                   'signature' => 'setBalance($balance)',
@@ -122,7 +123,8 @@ class PHP_CodeCoverage_Report_FactoryTest extends PHP_CodeCoverage_TestCase
                   'ccn' => 2,
                   'coverage' => 0,
                   'crap' => 6,
-                  'link' => 'BankAccount.php.html#11'
+                  'link' => 'BankAccount.php.html#11',
+                  'visibility' => 'protected'
                 ),
                 'depositMoney' => array(
                   'signature' => 'depositMoney($balance)',
@@ -133,7 +135,8 @@ class PHP_CodeCoverage_Report_FactoryTest extends PHP_CodeCoverage_TestCase
                   'ccn' => 1,
                   'coverage' => 100,
                   'crap' => '1',
-                  'link' => 'BankAccount.php.html#20'
+                  'link' => 'BankAccount.php.html#20',
+                  'visibility' => 'public'
                 ),
                 'withdrawMoney' => array(
                   'signature' => 'withdrawMoney($balance)',
@@ -144,7 +147,8 @@ class PHP_CodeCoverage_Report_FactoryTest extends PHP_CodeCoverage_TestCase
                   'ccn' => 1,
                   'coverage' => 100,
                   'crap' => '1',
-                  'link' => 'BankAccount.php.html#27'
+                  'link' => 'BankAccount.php.html#27',
+                  'visibility' => 'public'
                 ),
               ),
               'startLine' => 2,
